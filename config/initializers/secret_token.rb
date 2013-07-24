@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-CartBootstrap::Application.config.secret_key_base = '430f2515cace22972e39ed3337c00f1564ab3fad409a9accb707328db2ddb70ba759f7113de0e1d33ed161a5e46ae764a6edd5b5e9b63de7038da878440098c0'
+CartBootstrap::Application.config.secret_key_base = '7e991abf27975372b4afe33e2ffc05aebafccbadf899600610af13a62b7350d6dae6e091e1ba6483b2bb04c8a5175a8c9385e8b780d8a085a509af5d2e74e87a'
