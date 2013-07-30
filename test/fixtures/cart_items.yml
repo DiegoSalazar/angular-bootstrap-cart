@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cart_id: 1
+  variant_id: 1
+  quantity: 1
+  status: MyString
+  name: MyString
+  price: 9.99
+  savings_percentage: 1
+  savings_amount: 9.99
+  thumb_url: MyString
+  image_url: MyString
+  sale_type: MyString
+
+two:
+  cart_id: 1
+  variant_id: 1
+  quantity: 1
+  status: MyString
+  name: MyString
+  price: 9.99
+  savings_percentage: 1
+  savings_amount: 9.99
+  thumb_url: MyString
+  image_url: MyString
+  sale_type: MyString

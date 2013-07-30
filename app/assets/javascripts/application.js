@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require_tree ./lib
+//= require cart_widget
+//= require_tree ./cart_widget
 //= require_tree .
+

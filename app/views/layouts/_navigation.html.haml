@@ -1,3 +1,14 @@
-%ul.nav
-  %li= link_to 'Home', root_path
-  %li= link_to 'About', page_path('about')
+%ul.nav{style: 'width: 90%'}
+  %li= link_to 'Products', root_path
+  %li.cart_link
+    %a.vt-p{href: 'javascript:void(0)', :'bs-popover' => "'cart-popover.html'", :'data-placement' => "bottom", title: 'Cart', :'ng-bind' => 'cartLinkText()'}
+
+    %script{:id => "cart-popover.html", :type => "text/ng-template"}
+      %form#cart_pop_over_form
+        %p{:'ng-show' => 'empty'} You have no items in your cart!
+        %ul{:'ng-hide' => 'empty'}
+          %li{:'ng-repeat' => 'cart_item in cart.cart_items'}
+            %p
+              {{cart_item.name}}
+        
+        %a.btn{href: '/carts/'} Checkout

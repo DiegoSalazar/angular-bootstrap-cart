@@ -1,3 +1,5 @@
 CartBootstrap::Application.routes.draw do
-  root :to => 'visitors#new'
+  resources :carts
+
+  root :to => 'products#new'
 end
