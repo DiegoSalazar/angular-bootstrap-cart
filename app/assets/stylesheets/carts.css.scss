@@ -5,8 +5,23 @@
 .navbar .nav .cart_link {
   float: right;
 }
-
-#cart_pop_over_form {
+#cartPopOverForm {
   width: 200px;
   margin-bottom: 5px;
+}
+.cartPopOverList {
+  margin: 0;
+  list-style: none;
+}
+.cartPopOverList li {
+  overflow: hidden;
+}
+.evenItem {
+  background: #ebebeb;
+}
+.item {
+  float: left;
+}
+.removeItem {
+  float: right;
 }

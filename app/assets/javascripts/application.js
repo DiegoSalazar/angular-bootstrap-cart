@@ -15,4 +15,3 @@
 //= require bootstrap
 //= require angular-strap
 //= require_tree .
-

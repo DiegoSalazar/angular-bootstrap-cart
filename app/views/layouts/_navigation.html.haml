@@ -4,12 +4,12 @@
     %a.vt-p{href: 'javascript:void(0)', :'bs-popover' => "'cart-popover.html'", :'data-placement' => "bottom", title: 'Cart', :'ng-bind' => 'cartLinkText()'}
 
     %script{:id => "cart-popover.html", :type => "text/ng-template"}
-      %form#cart_pop_over_form
-        %p{:'ng-show' => 'empty'} You have no items in your cart!
-        %ul{:'ng-hide' => 'empty'}
-          %li{:'ng-repeat' => 'cart_item in cart.cart_items'}
-            %p
-              {{cart_item.name}}
-            %button{:'ng-click' => 'removeItem($index)'}
+      %form#cartPopOverForm
+        %p{:'ng-show' => 'cartEmpty()'} You have no items in your cart!
+        %ul.cartPopOverList{:'ng-hide' => 'cartEmpty()'}
+          %li{:'ng-repeat' => 'item in cart_items'}
+            %p.item
+              {{item.name}}
+            %button.removeItem{:'ng-click' => 'removeItem($index)'} X
         
         %a.btn{href: '/carts/'} Checkout
