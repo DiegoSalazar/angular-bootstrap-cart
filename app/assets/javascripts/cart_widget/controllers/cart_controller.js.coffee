@@ -1,17 +1,6 @@
 App.controller 'CartController', ['$scope', 'Cart', ($scope, Cart) ->
-  popover = $('a[bs-popover]')
-
-  $scope.showPopver = ->
-    stupidHack = ->
-      popover.popover('show')
-    setTimeout stupidHack, 0
-
-  # $scope.cart = Cart.query()
-  $scope.cart = {
-    cart_items: [
-      { name: 'Product 1 - red' }
-    ]
-  }
+  $scope.cart = Cart.query()
+  $scope.cart.cart_items ?= []
   $scope.quantity = $scope.cart.cart_items.length
   $scope.empty = $scope.quantity == 0
   $scope.popover = {
@@ -22,7 +11,17 @@ App.controller 'CartController', ['$scope', 'Cart', ($scope, Cart) ->
   $scope.cartLinkText = ->
     'Cart ' + $scope.quantity
 
-  # $scope.newCartItem1
-  $scope.addItem = (a)->
-    $scope.cart.cart_items.push(a)
+  $scope.addItem = (item)->
+    cart_item = Cart.save(item)
+    console.log(cart_item)
+    $scope.cart.cart_items.push(cart_item)
+
+  $scope.removeItem = (i)->
+    console.log(i)
+
+  popover_btn = $('a[bs-popover]')
+  $scope.showPopver = ->
+    stupidHack = -> # workaround for Angular's stupid "Error: $apply already in progress"
+      popover_btn.popover('show')
+    setTimeout stupidHack, 0
 ]

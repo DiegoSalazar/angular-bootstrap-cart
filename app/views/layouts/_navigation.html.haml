@@ -10,5 +10,6 @@
           %li{:'ng-repeat' => 'cart_item in cart.cart_items'}
             %p
               {{cart_item.name}}
+            %button{:'ng-click' => 'removeItem($index)'}
         
         %a.btn{href: '/carts/'} Checkout

@@ -11,11 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require_tree ./lib
-//= require cart_widget
-//= require_tree ./cart_widget
+//= require angular-strap
 //= require_tree .
 
