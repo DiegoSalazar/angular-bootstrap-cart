@@ -1,0 +1,16 @@
+%p{:'ng-show' => 'cartEmpty()'} You have no items in your cart!
+%ul.cartPopOverList{:'ng-hide' => 'cartEmpty()'}
+  %li{:'ng-repeat' => 'item in cart_items'}
+    %p.item
+      {{item.name}}
+    %span.left
+      x 
+      %span.numPicker
+        {{item.quantity}}
+      %span.numControls 
+        %span.up{:'ng-click' => "updateItemQty($index, 1)"} ▲
+        %span.dn{:'ng-click' => "updateItemQty($index, -1)", :'ng-hide' => 'itemQtyOne($index)'} ▼
+      = "= {{item.price * item.quantity | currency}}"
+    %button.removeItem{:'ng-click' => 'removeItem($index)'} X
+
+%p.right.cartTotal Total: {{cartTotal() | currency}}

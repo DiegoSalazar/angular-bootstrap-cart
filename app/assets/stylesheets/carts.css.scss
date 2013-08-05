@@ -5,8 +5,11 @@
 .navbar .nav .cart_link {
   float: right;
 }
+.popover {
+  max-width: 400px;
+}
 #cartPopOverForm {
-  width: 200px;
+  width: 330px;
   margin-bottom: 5px;
 }
 .cartPopOverList {
@@ -21,7 +24,32 @@
 }
 .item {
   float: left;
+  width: 50%;
+  padding: 1px 0;
 }
 .removeItem {
   float: right;
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+
+#cartForm {
+  background: #fff;
+  padding: 30px;
+}
+
+.numPicker {
+  display: inline-block;
+  border: 1px solid #ebebeb;
+  padding: 0px 5px;
+}
+.numControls {
+  
+}
+.numControls .up, .numControls .dn {
+  cursor: pointer;
 }

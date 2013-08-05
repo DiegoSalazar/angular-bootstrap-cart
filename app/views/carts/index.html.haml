@@ -1,2 +1,36 @@
-%h1 Carts#index
-%p Find me in app/views/carts/index.html.haml
+%h1 Your Cart
+
+%form#cartForm
+  = render 'carts/form'
+
+%br/
+%h3 Billing Info
+%form#billingForm.form-horizontal
+  .control-group
+    %label.control-label{:for => "billingFirstName"} First Name
+    .controls
+      %input#billingFirstName{:placeholder => "First Name", :type => "text"}/
+  .control-group
+    %label.control-label{:for => "billingLastName"} Last Name
+    .controls
+      %input#billingLastName{:placeholder => "Last Name", :type => "text"}/
+  .control-group
+    %label.control-label{:for => "billingAddress"} Address
+    .controls
+      %input#billingAddress{:placeholder => "Address", :type => "text"}/
+  .control-group
+    %label.control-label{:for => "billingCity"} City
+    .controls
+      %input#billingCity{:placeholder => "City", :type => "text"}/
+  .control-group
+    %label.control-label{:for => "billingState"} State
+    .controls
+      %input#billingState{:placeholder => "State", :type => "text"}/
+  .control-group
+    %label.control-label{:for => "billingZip"} Zip
+    .controls
+      %input#billingZip{:placeholder => "Zip", :type => "text"}/
+  
+  .control-group
+    .controls
+      %button.btn{:type => "submit"} Checkout

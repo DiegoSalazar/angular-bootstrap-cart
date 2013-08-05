@@ -11,7 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.cookie
 //= require turbolinks
-//= require bootstrap
+//= require bootstrap-tooltip
+//= require bootstrap-popover
 //= require angular-strap
 //= require_tree .

@@ -1,13 +1,12 @@
 %h3 Products
 
 %ul#products{style: 'list-style:none;margin:0;'}
-  - 3.times do |i|
-    %li{id: "product-#{i}", style: 'overflow:hidden;'}
-      %form{:'ng-init' => "ci#{i}.variant_id = #{i}; ci#{i}.name = 'Product #{i}'", id: "prod_#{i}"}
+  - Variant.all.each_with_index do |variant, i|
+    %li{id: "variant-#{i}", style: 'overflow:hidden;'}
+      %form{:'ng-init' => "ci#{i}.variant_id = #{variant.id}; ci#{i}.name = '#{variant.name}'; ci#{i}.quantity = 1;", id: "prod_#{i}"}
         / %input{type: 'hidden', :'ng-model' => "newCartItem#{i}.variant_id"}
         %img{src: '/assets/GIOGFAL001-thumb.jpg', style: 'float:left;margin:0 20px 20px 0'}
         .details
-          %h4= "Product #{i}"
+          %h4= variant.name
           %p A really cool product
-          / %button{type: 'button', :'ng-click' => 'addItem()'} Add to Cart
           %input{type: 'submit', value: 'Add to Cart', :'ng-click' => "addItem(ci#{i}); showPopover()"}

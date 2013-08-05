@@ -1,15 +1,9 @@
 %ul.nav{style: 'width: 90%'}
   %li= link_to 'Products', root_path
   %li.cart_link
-    %a.vt-p{href: 'javascript:void(0)', :'bs-popover' => "'cart-popover.html'", :'data-placement' => "bottom", title: 'Cart', :'ng-bind' => 'cartLinkText()'}
+    %a.vt-p{href: 'javascript:void(0)', :'bs-popover' => "'cart-popover.html'", :'data-placement' => "bottom", title: 'Cart', :'ng-bind' => 'cartLinkText()', :'ng-hide' => "#{current_page?('/carts') ? 'true' : 'false'}"}
 
     %script{:id => "cart-popover.html", :type => "text/ng-template"}
       %form#cartPopOverForm
-        %p{:'ng-show' => 'cartEmpty()'} You have no items in your cart!
-        %ul.cartPopOverList{:'ng-hide' => 'cartEmpty()'}
-          %li{:'ng-repeat' => 'item in cart_items'}
-            %p.item
-              {{item.name}}
-            %button.removeItem{:'ng-click' => 'removeItem($index)'} X
-        
+        = render 'carts/form'
         %a.btn{href: '/carts/'} Checkout
