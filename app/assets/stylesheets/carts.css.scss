@@ -12,12 +12,18 @@
   width: 330px;
   margin-bottom: 5px;
 }
-.cartPopOverList {
+.cartList {
   margin: 0;
   list-style: none;
 }
-.cartPopOverList li {
+.cartList li {
   overflow: hidden;
+}
+.cartList span, .cartList button {
+  -moz-user-select: none; 
+  -webkit-user-select: none; 
+  -ms-user-select:none; 
+  user-select:none;
 }
 .evenItem {
   background: #ebebeb;
@@ -48,7 +54,8 @@
   padding: 0px 5px;
 }
 .numControls {
-  
+  width: 32px;
+  display: inline-block;
 }
 .numControls .up, .numControls .dn {
   cursor: pointer;
