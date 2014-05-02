@@ -1,7 +1,7 @@
 %p{:'ng-show' => 'cartEmpty()'} You have no items in your cart!
 
 %ul.cartList{:'ng-hide' => 'cartEmpty()'}
-  %li{:'ng-repeat' => 'item in cart_items'}
+  %li{:'ng-repeat' => 'item in cart_items', :'ng-animate' => "'animate'"}
     %p.item
       {{item.name}}
     %span.left

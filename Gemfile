@@ -15,7 +15,6 @@ gem 'haml-rails'
 gem 'high_voltage'
 gem 'simple_form', '>= 3.0.0.rc'
 gem 'thin'
-gem 'angularjs-rails'
 
 group :development do
   gem 'better_errors'

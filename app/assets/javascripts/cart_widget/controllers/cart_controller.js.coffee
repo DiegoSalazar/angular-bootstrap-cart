@@ -4,6 +4,7 @@ App.controller 'CartController', ['$scope', '$location', 'Cart', 'CartItem', ($s
     # The cartId will be the same as the Rails session[:cart_id]
     Cart.get { id: cartId }, (cart)->
       $scope.cart = cart
+      console.log(cart)
       $scope.setCartItems()
   else # create a blank cart (Rails will save the cart_id to the session)
     cart = new Cart()
